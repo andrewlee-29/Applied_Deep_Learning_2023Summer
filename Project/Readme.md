@@ -34,7 +34,8 @@ There are two type of dilated models test in [1]. One model uses the same dilate
 
 ## Results
 
-In part 1, all the models have high accuracy and low loss in the range of 5 - 8 epoch. After 10 episodes, the validation loss of the model is getting smaller and starts overfitting. There is no obvious difference between the CNN, dilated CNN, and HDC models.
+In part 1, all the models have high accuracy and low loss in the range of 5 - 8 epoch. After 10 episodes, the validation loss of the model is getting smaller and starts overfitting. There is no obvious difference between the CNN, dilated CNN, and HDC models. The CNN model averagely takes 12ms for each epoch. The dilated CNN take 20ms for each epoch. The HDC model take 16 ms for each epoch.
+
 ![CNN](./plots/CNN_acc.png)![dilated_CNN](./plots/dilated_CNN_acc.png)![HDC](./plots/HDC_acc.png)
 
 Fig 3 - epoches vs accuaacy in CNN model
