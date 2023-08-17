@@ -35,12 +35,24 @@ There are two type of dilated models test in [1]. One model uses the same dilate
 ## Results
 
 In part 1, the traditional CNN model has 1.9 millions parameter in the first fully connected network, the dilated CNN and HDC have around 1.3 millions parameter. In the results, all the models have high accuracy and low loss in the range of 5 - 8 epoch. After 10 episodes, the validation loss of the model is getting smaller and starts overfitting. There is no obvious difference between the CNN, dilated CNN, and HDC models.
-![plot](./plots/CNN_acc.png)![plot](./plots/dilated_CNN_acc.png)![plot](./plots/HDC_acc.png)
+![CNN](./plots/CNN_acc.png)![dilated_CNN](./plots/dilated_CNN_acc.png)![HDC](./plots/HDC_acc.png)
+
+Fig 3 - epoches vs accuaacy in CNN model
+
+Fig 4 - epoches vs accuaacy in dilated_CNN model
+
+Fig 5 - epoches vs accuaacy in HDC model
 
 In part 2 results, I add data augmentation and rescaling layers to each model, and I train with 100 epochs to see the overall performance with all models. The traditional CNN model loss and accuracy become inconsistent. The differences between each epoch are huge. The training loss reaches the minimum value at 20 epoches. The dilated CNN model with the same dilated rate in each CNN layer has more consistent loss and accuracy compared with the traditional CNN model. The training loss also reached the minimum value at 20 epoches. However, the model's accuracy dropped from 85% to 75% at the 20 epoches. The accuracy drop may be caused by the dilated convolution kernels affecting the omission of some pixels.
 The HDC model with different dilated rates has the most consistent loss and accuracy. The training loss also reaches the minimum value at 20 epoches, and has 85% accuracy. All results can see as plots folder with file name starting with(100epochs).
 
-![plot](./plots/100epochs_CNN_acc.png)![plot](./plots/100epochs_dilated_CNN_acc.png)![plot](./plots/100epochs_HDC_acc.png)
+![100epochs_CNN_acc](./plots/100epochs_CNN_acc.png)![100epochs_dilated_CNN](./plots/100epochs_dilated_CNN_acc.png)![100epochs_HDC](./plots/100epochs_HDC_acc.png)
+
+Fig 6 - 100 epoches vs accuaacy in CNN model
+
+Fig 7 - 100 epoches vs accuaacy in dilated_CNN model
+
+Fig 8 - 100 epoches vs accuaacy in HDC model
 
 After that, I used the earlystopping callback to try to get the best performance and test with the test data. The traditional CNN have worst test accuracy comparing to dilated CNN and HDC models. Dilated convolution have increasing the performance of CNN.
 
